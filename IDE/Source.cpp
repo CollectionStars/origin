@@ -21,7 +21,7 @@ int main() {
 	int size1;
 	fin >> size1;
 	
-	if (size1 < 0) {
+	if (size1 <= 0) {
 		std::cout << "Некорректный размер массива!\n";
 		return 0;
 	}
@@ -37,7 +37,7 @@ int main() {
 	int size2;
 	fin >> size2;
 	
-	if (size2 < 0) 
+	if (size2 <= 0) 
 	{
 		std::cout << "Некорректный размер массива!\n";
 		return 0;
