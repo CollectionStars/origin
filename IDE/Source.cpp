@@ -11,6 +11,7 @@ void print(int* arr, int size) {
 }
 
 int main() {
+	setlocale(LC_ALL, "ru");
 	std::ifstream fin("in.txt");
 
 	if (!fin.is_open()) {
@@ -21,7 +22,8 @@ int main() {
 	int size1;
 	fin >> size1;
 	
-	if (size1 < 0) {
+	if (size1 < 0) 
+	{
 		std::cout << "Некорректный размер массива!\n";
 		return 0;
 	}
@@ -33,10 +35,9 @@ int main() {
 		fin >> arr1[i];
 	}
 
-
 	int size2;
 	fin >> size2;
-	
+
 	if (size2 < 0) 
 	{
 		std::cout << "Некорректный размер массива!\n";
@@ -55,29 +56,31 @@ int main() {
 
 	//changing arr1
 	int temp1 = arr1[0];
+	//если рамер равен одному или меньше, то там бесмысленно чтото менять
+	if (size1 > 1) {
 
-	for (size_t i = 0; i < size1 - 1; i++)
-	{
-		arr1[i] = arr1[i + 1];
+		for (size_t i = 0; i < size1 - 1; i++)
+		{
+			arr1[i] = arr1[i + 1];
+		}
+		arr1[size1 - 1] = temp1;
 	}
-	arr1[size1 - 1] = temp1;
-
 	//print(arr1, size1);
 
 
 
 	//changing arr2
-
 	int temp2 = arr2[size2 - 1];
-	for (size_t i = size2 - 1; i > 0; i--)
-	{
-		arr2[i] = arr2[i - 1];
+	if (size2 > 1) {
+		for (size_t i = size2 - 1; i > 0; i--)
+		{
+			arr2[i] = arr2[i - 1];
+		}
 	}
-
 	arr2[0] = temp2;
 
 
-	print(arr2, size2);
+	//print(arr2, size2);
 
 	std::ofstream fout("out.txt");
 
@@ -99,5 +102,6 @@ int main() {
 	{
 		fout << arr1[i] << " ";
 	}
-
+	delete[] arr1;
+	delete[] arr2;
 }
