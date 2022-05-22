@@ -36,6 +36,12 @@ int main() {
 
 	int size2;
 	fin >> size2;
+	
+	if (size2 < 0) 
+	{
+		std::cout << "Некорректный размер массива!\n";
+		return 0;
+	}
 
 	int* arr2 = new int[size2];
 
