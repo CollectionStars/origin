@@ -2,4 +2,4 @@
 
 В этом репозитории расположены все домашние задания к каждой лекции.
 
-#### 1. [IDE](01)
+#### 1. [[IDE](https://github.com/CollectionStars/origin/tree/main/IDE)](01)
