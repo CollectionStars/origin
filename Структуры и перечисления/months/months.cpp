@@ -26,11 +26,11 @@ void main()
 
 	int num;
 	while (true) {
-		std::cout << "Ââåäèòå íîìåğ ìåñÿöà: ";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ¼ĞµÑ€ Ğ¼ĞµÑÑÑ†Ğ°: ";
 		std::cin >> num;
 
 		if (num == 0) {
-			std::cout << "Äî ñâèäàíèÿ\n";
+			std::cout << "Ğ”Ğ¾ ÑĞ²Ğ¸Ğ´Ğ°Ğ½Ğ¸Ñ\n";
 			return;
 		}
 
@@ -39,43 +39,43 @@ void main()
 		switch (num)
 		{
 		case January:
-			std::cout << "ßíâàğü\n";
+			std::cout << "Ğ¯Ğ½Ğ²Ğ°Ñ€ÑŒ\n";
 			break;
 		case February:
-			std::cout << "Ôåâğàëü\n";
+			std::cout << "Ğ¤ĞµĞ²Ñ€Ğ°Ğ»ÑŒ\n";
 			break;
 		case March:
-			std::cout << "Ìàğò\n";
+			std::cout << "ĞœĞ°Ñ€Ñ‚\n";
 			break;
 		case April:
-			std::cout << "Àïğåëü\n";
+			std::cout << "ĞĞ¿Ñ€ĞµĞ»ÑŒ\n";
 			break;
 		case May:
-			std::cout << "Ìàé\n";
+			std::cout << "ĞœĞ°Ğ¹\n";
 			break;
 		case June:
-			std::cout << "Èşíü\n";
+			std::cout << "Ğ˜ÑĞ½ÑŒ\n";
 			break;
 		case July:
-			std::cout << "Èşëü\n";
+			std::cout << "Ğ˜ÑĞ»ÑŒ\n";
 			break;
 		case August:
-			std::cout << "Àâãóñò\n";
+			std::cout << "ĞĞ²Ğ³ÑƒÑÑ‚\n";
 			break;
 		case September:
-			std::cout << "Ñåíòÿáğü\n";
+			std::cout << "Ğ¡ĞµĞ½Ñ‚ÑĞ±Ñ€ÑŒ\n";
 			break;
 		case October:
-			std::cout << "Îêòÿáğü\n";
+			std::cout << "ĞĞºÑ‚ÑĞ±Ñ€ÑŒ\n";
 			break;
 		case November:
-			std::cout << "Íîÿáğü\n";
+			std::cout << "ĞĞ¾ÑĞ±Ñ€ÑŒ\n";
 			break;
 		case December:
-			std::cout << "Äåêàáğü\n";
+			std::cout << "Ğ”ĞµĞºĞ°Ğ±Ñ€ÑŒ\n";
 			break;
 		default:
-			std::cout << "Íåïğàâèëüíûé íîìåğ!\n";
+			std::cout << "ĞĞµĞ¿Ñ€Ğ°Ğ²Ğ¸Ğ»ÑŒĞ½Ñ‹Ğ¹ Ğ½Ğ¾Ğ¼ĞµÑ€!\n";
 			break;
 		}
 	}
