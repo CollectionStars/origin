@@ -48,7 +48,7 @@ public:
 
 };
 
-void main() 
+int main() 
 {
 	setlocale(LC_ALL, "ru");
 	SetConsoleCP(1251);
