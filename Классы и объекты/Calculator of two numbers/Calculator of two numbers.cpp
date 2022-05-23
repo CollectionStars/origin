@@ -57,20 +57,20 @@ void main()
 	Calculator c1;
 	double n1, n2;
 
-	std::cout << "Ââåäèòå num1: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num1: ";
 	std::cin >> n1;
 	while (c1.set_num1(n1) == false) {
-		std::cout << "Íåâåğíûé ââîä!\n";
-		std::cout << "Ââåäèòå num1: ";
+		std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´!\n";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num1: ";
 		std::cin >> n1;
 		c1.set_num1(n1);
 	}
 
-	std::cout << "Ââåäèòå num2: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num2: ";
 	std::cin >> n2;
 	while (c1.set_num2(n2) == false) {
-		std::cout << "Íåâåğíûé ââîä!\n";
-		std::cout << "Ââåäèòå num2: ";
+		std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´!\n";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num2: ";
 		std::cin >> n2;
 		c1.set_num2(n2);
 	}
@@ -83,20 +83,20 @@ void main()
 	std::cout << "num2 / num1 = " << c1.divide_2_1() << "\n\n";
 
 
-	std::cout << "Ââåäèòå num1: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num1: ";
 	std::cin >> n1;
 	while (c1.set_num1(n1) == false) {
-		std::cout << "Íåâåğíûé ââîä!\n";
-		std::cout << "Ââåäèòå num1: ";
+		std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´!\n";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num1: ";
 		std::cin >> n1;
 		c1.set_num1(n1);
 	}
 
-	std::cout << "Ââåäèòå num2: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num2: ";
 	std::cin >> n2;
 	while (c1.set_num2(n2) == false) {
-		std::cout << "Íåâåğíûé ââîä!\n";
-		std::cout << "Ââåäèòå num2: ";
+		std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´!\n";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ num2: ";
 		std::cin >> n2;
 		c1.set_num2(n2);
 	}
