@@ -12,25 +12,25 @@ struct Address {
 };
 
 void print(const Address& a) {
-	std::cout << "Ñòğàíà: " << a.country << "\n";
-	std::cout << "Ãîğîä: " << a.city << "\n";
-	std::cout << "Óëèöà: " << a.street << "\n";
-	std::cout << "Íîìåğ äîìà: " << a.house << "\n";
-	std::cout << "Íîìåğ êâàğòèğû: " << a.flat << "\n";
-	std::cout << "Èíäåêñ: " << a.index << "\n";
+	std::cout << "Ğ¡Ñ‚Ñ€Ğ°Ğ½Ğ°: " << a.country << "\n";
+	std::cout << "Ğ“Ğ¾Ñ€Ğ¾Ğ´: " << a.city << "\n";
+	std::cout << "Ğ£Ğ»Ğ¸Ñ†Ğ°: " << a.street << "\n";
+	std::cout << "ĞĞ¾Ğ¼ĞµÑ€ Ğ´Ğ¾Ğ¼Ğ°: " << a.house << "\n";
+	std::cout << "ĞĞ¾Ğ¼ĞµÑ€ ĞºĞ²Ğ°Ñ€Ñ‚Ğ¸Ñ€Ñ‹: " << a.flat << "\n";
+	std::cout << "Ğ˜Ğ½Ğ´ĞµĞºÑ: " << a.index << "\n";
 }
 
 
-void main() 
+int main() 
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "ru");
 
 	Address a1;
-	a1.country = "Ğîññèÿ";
-	a1.city = "Ìîñêâà";
-	a1.street = "Àğáàò";
+	a1.country = "Ğ Ğ¾ÑÑĞ¸Ñ";
+	a1.city = "ĞœĞ¾ÑĞºĞ²Ğ°";
+	a1.street = "ĞÑ€Ğ±Ğ°Ñ‚";
 	a1.house = 12;
 	a1.flat = 8;
 	a1.index = 123456;
@@ -40,9 +40,9 @@ void main()
 	std::cout << "\n\n";
 
 	Address a2;
-	a2.country = "Ğîññèÿ";
-	a2.city = "Èæåâñê";
-	a2.street = "Ïóøêèíà";
+	a2.country = "Ğ Ğ¾ÑÑĞ¸Ñ";
+	a2.city = "Ğ˜Ğ¶ĞµĞ²ÑĞº";
+	a2.street = "ĞŸÑƒÑˆĞºĞ¸Ğ½Ğ°";
 	a2.house = 59;
 	a2.flat = 143;
 	a2.index = 953769;
