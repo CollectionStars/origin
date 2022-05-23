@@ -15,7 +15,7 @@ void reset(Account& acc, double m)
 }
 
 
-void main() 
+int main() 
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
