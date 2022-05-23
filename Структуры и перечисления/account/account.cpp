@@ -23,20 +23,20 @@ void main()
 
 	Account acc;
 
-	std::cout << "Ââåäèòå íîìåð ñ÷¸òà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‡Ñ‘Ñ‚Ð°: ";
 	std::cin >> acc.id;
 
-	std::cout << "Ââåäèòå èìÿ âëàäåëüöà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ð»Ð°Ð´ÐµÐ»ÑŒÑ†Ð°: ";
 	std::cin >> acc.name;
 
-	std::cout << "Ââåäèòå áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	std::cin >> acc.money;
 
 
 	double m;
-	std::cout << "Ââåäèòå íîâûé áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	std::cin >> m;
 	reset(acc, m);
 
-	std::cout << "Âàø ñ÷åò " << acc.name << ", " << acc.id << ", " << acc.money << "\n";
+	std::cout << "Ð’Ð°Ñˆ ÑÑ‡ÐµÑ‚ " << acc.name << ", " << acc.id << ", " << acc.money << "\n";
 }
