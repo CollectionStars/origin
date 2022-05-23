@@ -45,7 +45,7 @@ int main()
 			std::cin >> ans;
 			if (ans == "x" || ans == "х") {
 				std::cout << "До свидания!\n";
-				return;
+				return 0;
 			}
 			else if (ans == "+") {
 				c.add();
