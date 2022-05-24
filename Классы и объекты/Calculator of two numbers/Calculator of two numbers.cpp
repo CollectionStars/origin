@@ -48,13 +48,7 @@ public:
 
 };
 
-int main() 
-{
-	setlocale(LC_ALL, "ru");
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-
-	Calculator c1;
+void test_calc(Calculator& c1) {
 	double n1, n2;
 
 	std::cout << "Введите num1: ";
@@ -81,31 +75,19 @@ int main()
 	std::cout << "num1 * num2 = " << c1.multiply() << "\n";
 	std::cout << "num1 / num2 = " << c1.divide_1_2() << "\n";
 	std::cout << "num2 / num1 = " << c1.divide_2_1() << "\n\n";
+}
 
 
-	std::cout << "Введите num1: ";
-	std::cin >> n1;
-	while (c1.set_num1(n1) == false) {
-		std::cout << "Неверный ввод!\n";
-		std::cout << "Введите num1: ";
-		std::cin >> n1;
-		c1.set_num1(n1);
-	}
 
-	std::cout << "Введите num2: ";
-	std::cin >> n2;
-	while (c1.set_num2(n2) == false) {
-		std::cout << "Неверный ввод!\n";
-		std::cout << "Введите num2: ";
-		std::cin >> n2;
-		c1.set_num2(n2);
-	}
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-	std::cout << "num1 + num2 = " << c1.add() << "\n";
-	std::cout << "num1 - num2 = " << c1.subtract_1_2() << "\n";
-	std::cout << "num2 - num1 = " << c1.subtract_2_1() << "\n";
-	std::cout << "num1 * num2 = " << c1.multiply() << "\n";
-	std::cout << "num1 / num2 = " << c1.divide_1_2() << "\n";
-	std::cout << "num2 / num1 = " << c1.divide_2_1() << "\n";
+	Calculator c1;
+
+	test_calc(c1);
+	test_calc(c1);
 
 }
