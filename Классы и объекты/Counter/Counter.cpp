@@ -2,7 +2,7 @@
 #include <windows.h> 
 #include <string>
 
-class Counter 
+class Counter
 {
 
 	int count;
@@ -26,7 +26,29 @@ public:
 	}
 };
 
-int main() 
+
+void test_counter(Counter& c) {
+	std::string ans;
+	while (true) {
+		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
+		std::cin >> ans;
+		if (ans == "x" || ans == "х") {
+			std::cout << "До свидания!\n";
+			return;
+		}
+		else if (ans == "+") {
+			c.add();
+		}
+		else if (ans == "-") {
+			c.sub();
+		}
+		else if (ans == "=") {
+			std::cout << c.get_count() << "\n";
+		}
+	}
+}
+
+int main()
 {
 	setlocale(LC_ALL, "ru");
 	SetConsoleCP(1251);
@@ -39,43 +61,13 @@ int main()
 		std::cout << "Введите начальное значение счётчика: ";
 		int num;
 		std::cin >> num;
+		//constructor with params
 		Counter c(num);
-		while (true) {
-			std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
-			std::cin >> ans;
-			if (ans == "x" || ans == "х") {
-				std::cout << "До свидания!\n";
-				return 0;
-			}
-			else if (ans == "+") {
-				c.add();
-			}
-			else if (ans == "-") {
-				c.sub();
-			}
-			else if (ans == "=") {
-				std::cout << c.get_count() << "\n";
-			}
-		}
+		test_counter(c);
 	}
 	else {
+		//constructor without params
 		Counter c;
-		while (true) {
-			std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
-			std::cin >> ans;
-			if (ans == "x" || ans == "х") {
-				std::cout << "До свидания!\n";
-				return;
-			}
-			else if (ans == "+") {
-				c.add();
-			}
-			else if (ans == "-") {
-				c.sub();
-			}
-			else if (ans == "=") {
-				std::cout << c.get_count() << "\n";
-			}
-		}
+		test_counter(c);
 	}
 }
