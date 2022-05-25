@@ -80,7 +80,7 @@ void test_calc(Calculator& c1) {
 
 
 
-void main()
+int main()
 {
 	setlocale(LC_ALL, "ru");
 	SetConsoleCP(1251);
