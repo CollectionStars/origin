@@ -4,18 +4,18 @@
 
 class Triangle {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C;
 
 	std::string name;
 public:
 	Triangle()  {
-		name = "Треугольник";
+		name = "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 	Triangle(int a_, int b_, int c_, int A_, int B_, int C_)
-		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), name("Треугольник:") {}
+		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), name("РўСЂРµСѓРіРѕР»СЊРЅРёРє:") {}
 
 	int get_a() {
 		return a;
@@ -41,56 +41,56 @@ public:
 	}
 	void print() {
 		std::cout << name << "\n";
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << "\n\n";
+		std::cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << "\n";
+		std::cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << "\n\n";
 
 	}
 };
 
-//равнобедренный
+//СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№
 //a==c, A==C
 class Iso_Triangle :public Triangle {
 
 public:
 
 	Iso_Triangle() {
-		name = "Равнобедренный треугольник";
+		name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	Iso_Triangle(int a_, int b_, int A_, int B_) :Triangle(a_, b_, a_, A_, B_, A_)
 	{
-		name = "Равнобедренный треугольник:";
+		name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє:";
 	}
 
 
 };
 
-//равносторонний
+//СЂР°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№
 class Equ_Triangle :public Iso_Triangle {
 public:
 	Equ_Triangle() {
-		name = "Равносторонний треугольник";
+		name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 	Equ_Triangle(int a_) :Iso_Triangle(a_, a_, 60, 60) {
-		name = "Равносторонний треугольник:";
+		name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє:";
 
 	}
 };
 
 
-//прямоугольный треугольник
+//РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 class Rect_Triangle :public Triangle {
 
 public:
 
 	Rect_Triangle() {
-		name = "Прямоугольный треугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 
 	Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
-		name = "Прямоугольный треугольник:";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє:";
 	}
 
 
@@ -100,18 +100,18 @@ public:
 class Quadrangle {
 protected:
 
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c, d;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C, D;
 
 	std::string name;
 public:
 	Quadrangle() { 
-		name = "Четырехугольник"; 
+		name = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє"; 
 	}
 	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
-		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), name("Четырехугольник:") {}
+		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), name("Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє:") {}
 
 	int get_a() {
 		return a;
@@ -140,8 +140,8 @@ public:
 
 	void print() {
 		std::cout << name << "\n";
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
+		std::cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
+		std::cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
 
 	}
 
@@ -151,19 +151,16 @@ public:
 };
 
 
-
-
-
 //a==c b==d, A==C B===D
 class Parallelogram :public Quadrangle {
 public:
 	Parallelogram() {
-		name = "Параллелограмм";
+		name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј";
 	}
 
 	Parallelogram(int a_, int b_, int A_, int B_) :Quadrangle(a_, b_, a_, b_, A_, B_, A_, B_)
 	{
-		name = "Параллелограмм:";
+		name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј:";
 	}
 
 };
@@ -172,12 +169,12 @@ public:
 class Rectangle :public Parallelogram {
 public:
 	Rectangle() {
-		name = "Прямоугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	Rectangle(int a_, int b_) :Parallelogram(a_, b_, 90, 90)
 	{
-		name = "Прямоугольник:";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє:";
 	}
 };
 
@@ -186,12 +183,12 @@ public:
 class Square :public Rectangle {
 public:
 	Square() {
-		name = "Квадрат";
+		name = "РљРІР°РґСЂР°С‚";
 	}
 
 	Square(int a_) :Rectangle(a_, a_)
 	{
-		name = "Квадрат:";
+		name = "РљРІР°РґСЂР°С‚:";
 	}
 };
 
@@ -200,12 +197,12 @@ class Rhombus : public Parallelogram {
 public:
 	Rhombus()
 	{
-		name = "Ромб";
+		name = "Р РѕРјР±";
 	}
 
 	Rhombus(int a_, int A_, int B_) :Parallelogram(a_, a_, A_, B_)
 	{
-		name = "Ромб:";
+		name = "Р РѕРјР±:";
 	}
 };
 
