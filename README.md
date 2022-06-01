@@ -6,3 +6,4 @@
 #### 2. [[Структуры и перечисления](https://github.com/CollectionStars/origin/tree/main/Структуры%20и%20перечисления)](02)
 #### 3. [[Классы и объекты](https://github.com/CollectionStars/origin/tree/main/Классы%20и%20объекты)](03) 
 #### 4. [[ООП: абстракция и инкапсуляция](https://github.com/CollectionStars/origin/tree/main/ООП:%20абстракция%20и%20инкапсуляция)](03)
+#### 5. [[ООП: наследование и полиморфизм](https://github.com/CollectionStars/origin/tree/main/ООП:%20наследование%20и%20полиморфизм)](03)
