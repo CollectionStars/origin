@@ -28,7 +28,7 @@ void sort(Address* arr, int size) {
 	for (int i = 0; i < size - 1; i++) {
 		for (int j = 0; j < size - i - 1; j++) {
 			if (arr[j].get_city() > arr[j + 1].get_city()) {
-				// меняем элементы местами
+				// РјРµРЅСЏРµРј СЌР»РµРјРµРЅС‚С‹ РјРµСЃС‚Р°РјРё
 				temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
