@@ -7,7 +7,7 @@ protected:
 	int	sides_count;
 	std::string name;
 public:
-	Figure() :sides_count(0), name("Фигура") {}
+	Figure() :sides_count(0), name("Р¤РёРіСѓСЂР°") {}
 	Figure(int count, std::string n) :sides_count(count), name(n) {}
 
 	int get_sides_count() {
@@ -21,20 +21,20 @@ public:
 
 class Triangle :public Figure {
 public:
-	Triangle() :Figure(3, "Треугольник") {}
+	Triangle() :Figure(3, "РўСЂРµСѓРіРѕР»СЊРЅРёРє") {}
 };
 
 class Quadrangle :public Figure {
 public:
 
-	Quadrangle() :Figure(4, "Четырёхугольник") {}
+	Quadrangle() :Figure(4, "Р§РµС‚С‹СЂС‘С…СѓРіРѕР»СЊРЅРёРє") {}
 };
 
 
 int main() {
 	setlocale(LC_ALL, "rus");
 
-	std::cout << "Количество сторон: "<<std::endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: "<<std::endl;
 
 	Figure f;
 	std::cout << f.get_name() << ": " << f.get_sides_count() << "\n";
