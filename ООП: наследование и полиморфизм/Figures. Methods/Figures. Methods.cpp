@@ -6,7 +6,7 @@ protected:
 	int sides_count;
 	std::string name;
 public:
-	Figure() :name("Фигура"), sides_count(0) {}
+	Figure() :name("Р¤РёРіСѓСЂР°"), sides_count(0) {}
 	Figure(int count, std::string n) :sides_count(count), name(n) {}
 
 	virtual bool check() {
@@ -19,26 +19,26 @@ public:
 	virtual void print_info() {
 		std::cout << name << ":\n";
 		if (check() == true) {
-			std::cout << "Правильная\n";
+			std::cout << "РџСЂР°РІРёР»СЊРЅР°СЏ\n";
 		}
 		else {
-			std::cout << "Неправильная\n";
+			std::cout << "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ\n";
 		}
-		std::cout << "Количество сторон: " << sides_count << "\n";
+		std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕСЂРѕРЅ: " << sides_count << "\n";
 	}
 };
 
 class Triangle :public Figure {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C;
 
 public:
-	Triangle() :Figure(3, "Треугольник") {}
+	Triangle() :Figure(3, "РўСЂРµСѓРіРѕР»СЊРЅРёРє") {}
 	Triangle(int a_, int b_, int c_, int A_, int B_, int C_)
-		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure(3, "Треугольник") {}
+		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure(3, "РўСЂРµСѓРіРѕР»СЊРЅРёРє") {}
 
 	int get_a() {
 		return a;
@@ -71,24 +71,24 @@ public:
 	}
 	void print_info() override {
 		Figure::print_info();
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << "\n\n";
+		std::cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << "\n";
+		std::cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << "\n\n";
 
 	}
 };
 
-//равнобедренный
+//СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№
 //a==c, A==C
 class Iso_Triangle :public Triangle {
 public:
 
 	Iso_Triangle() {
-		name = "Равнобедренный треугольник";
+		name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	Iso_Triangle(int a_, int b_, int A_, int B_) :Triangle(a_, b_, a_, A_, B_, A_)
 	{
-		name = "Равнобедренный треугольник";
+		name = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	bool check() override {
@@ -100,19 +100,19 @@ public:
 
 };
 
-//прямоугольный треугольник
+//РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 class Rect_Triangle :public Triangle {
 
 public:
 
 	Rect_Triangle() {
-		name = "Прямоугольный треугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 
 	Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
-		name = "Прямоугольный треугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	bool check() override {
@@ -123,19 +123,19 @@ public:
 	}
 };
 
-//прямоугольный треугольник
+//РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 class Rect_Triangle1 :public Triangle {
 
 public:
 
 	Rect_Triangle1() {
-		name = "Прямоугольный треугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 
 	Rect_Triangle1(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
-		name = "Прямоугольный треугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	bool check() override {
@@ -146,14 +146,14 @@ public:
 	}
 };
 
-//равносторонний
+//СЂР°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№
 class Equ_Triangle :public Iso_Triangle {
 public:
 	Equ_Triangle() {
-		name = "Равносторонний треугольник";
+		name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 	}
 	Equ_Triangle(int a_) :Iso_Triangle(a_, a_, 60, 60) {
-		name = "Равносторонний треугольник";
+		name = "Р Р°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє";
 
 	}
 	bool check() override {
@@ -168,15 +168,15 @@ public:
 class Quadrangle : public Figure {
 protected:
 
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c, d;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C, D;
 
 public:
-	Quadrangle() :Figure(4, "Четырехугольник") {}
+	Quadrangle() :Figure(4, "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє") {}
 	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
-		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure(4, "Четырехугольник") {}
+		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure(4, "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє") {}
 
 	int get_a() {
 		return a;
@@ -213,8 +213,8 @@ public:
 
 	void print_info() {
 		Figure::print_info();
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
+		std::cout << "РЎС‚РѕСЂРѕРЅС‹: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
+		std::cout << "РЈРіР»С‹: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
 
 	}
 
@@ -229,12 +229,12 @@ public:
 class Parallelogram :public Quadrangle {
 public:
 	Parallelogram() {
-		name = "Параллелограмм";
+		name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј";
 	}
 
 	Parallelogram(int a_, int b_, int A_, int B_) :Quadrangle(a_, b_, a_, b_, A_, B_, A_, B_)
 	{
-		name = "Параллелограмм";
+		name = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј";
 	}
 
 	bool check() override {
@@ -249,12 +249,12 @@ public:
 class Rectangle :public Parallelogram {
 public:
 	Rectangle() {
-		name = "Прямоугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	Rectangle(int a_, int b_) :Parallelogram(a_, b_, 90, 90)
 	{
-		name = "Прямоугольник";
+		name = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє";
 	}
 
 	bool check() override {
@@ -270,12 +270,12 @@ public:
 class Square :public Rectangle {
 public:
 	Square() {
-		name = "Квадрат";
+		name = "РљРІР°РґСЂР°С‚";
 	}
 
 	Square(int a_) :Rectangle(a_, a_)
 	{
-		name = "Квадрат";
+		name = "РљРІР°РґСЂР°С‚";
 	}
 
 	bool check() override {
@@ -291,12 +291,12 @@ class Rhombus : public Parallelogram {
 public:
 	Rhombus()
 	{
-		name = "Ромб";
+		name = "Р РѕРјР±";
 	}
 
 	Rhombus(int a_, int A_, int B_) :Parallelogram(a_, a_, A_, B_)
 	{
-		name = "Ромб";
+		name = "Р РѕРјР±";
 	}
 
 
