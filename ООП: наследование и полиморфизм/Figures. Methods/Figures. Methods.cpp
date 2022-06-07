@@ -92,7 +92,7 @@ public:
 	}
 
 	bool check() override {
-		if (A + B + C == 180 && a == c) {
+		if (Triangle::check() && a == c && A == C) {
 			return true;
 		}
 		return false;
@@ -116,35 +116,13 @@ public:
 	}
 
 	bool check() override {
-		if (A + B + C == 180 && C == 90) {
+		if (Triangle::check() && C == 90) {
 			return true;
 		}
 		return false;
 	}
 };
 
-//прямоугольный треугольник
-class Rect_Triangle1 :public Triangle {
-
-public:
-
-	Rect_Triangle1() {
-		name = "Прямоугольный треугольник";
-	}
-
-
-	Rect_Triangle1(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
-	{
-		name = "Прямоугольный треугольник";
-	}
-
-	bool check() override {
-		if (A + B + C == 180 && C == 90) {
-			return true;
-		}
-		return false;
-	}
-};
 
 //равносторонний
 class Equ_Triangle :public Iso_Triangle {
@@ -157,7 +135,12 @@ public:
 
 	}
 	bool check() override {
-		if (A + B + C == 180 && a == b == c) {
+		//проверка a==b тк вызвали проверку у равнобедренного треугольника
+		bool equ_sides = a == b;
+
+		//проверка такая, тк остальные проверки излишни тк вызвали проверку у равнобедренного треугольника
+		bool equ_corners = A == B && A == 60;
+		if (Iso_Triangle::check() && equ_sides && equ_corners) {
 			return true;
 		}
 		return false;
@@ -238,7 +221,7 @@ public:
 	}
 
 	bool check() override {
-		if (A + B + C + D == 360 && a == c && b == d && A == C && B == D) {
+		if (Quadrangle::check() && a == c && b == d && A == C && B == D) {
 			return true;
 		}
 		return false;
@@ -258,7 +241,7 @@ public:
 	}
 
 	bool check() override {
-		if (A == B == C == D == 90 && a == c && b == d) {
+		if (Parallelogram::check() && A == B && A == 90) {
 			return true;
 		}
 		return false;
@@ -279,7 +262,7 @@ public:
 	}
 
 	bool check() override {
-		if (A == B == C == D == 90 && a == b == c == d) {
+		if (Rectangle::check() && a == b) {
 			return true;
 		}
 		return false;
@@ -301,7 +284,7 @@ public:
 
 
 	bool check() override {
-		if (A == C && B == D && a == b == c == d) {
+		if (a == b && Parallelogram::check()) {
 			return true;
 		}
 		return false;
@@ -322,8 +305,9 @@ int main() {
 	Rect_Triangle t2(10, 20, 30, 50, 60);
 	t2.print_info();
 
-	Rect_Triangle1 t3(10, 20, 30, 50, 40);
+	Rect_Triangle t3(10, 20, 30, 50, 40);
 	t3.print_info();
+
 
 	Iso_Triangle t(10, 20, 50, 60);
 	t.print_info();
