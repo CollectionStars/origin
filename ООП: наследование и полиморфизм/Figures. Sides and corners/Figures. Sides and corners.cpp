@@ -1,21 +1,45 @@
 #include <iostream>
 #include <string>
 
+class Figure {
+protected:
+	std::string name;
 
-class Triangle {
+	Figure() {
+		name = "Фигура";
+	}
+public:
+	Figure(std::string n) {
+		name = n;
+	}
+
+	virtual void print() {
+		std::cout << name << "\n";
+	}
+
+	std::string get_name() {
+		return name;
+	}
+};
+
+
+class Triangle : public Figure{
 protected:
 	//стороны
 	int a, b, c;
 	//углы
 	int A, B, C;
 
-	std::string name;
-public:
-	Triangle()  {
+	
+
+	Triangle() {
 		name = "Треугольник";
 	}
+public:
+
+
 	Triangle(int a_, int b_, int c_, int A_, int B_, int C_)
-		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), name("Треугольник:") {}
+		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure("Треугольник:") {}
 
 	int get_a() {
 		return a;
@@ -36,11 +60,9 @@ public:
 		return C;
 	}
 
-	std::string get_name() {
-		return name;
-	}
-	void print() {
-		std::cout << name << "\n";
+	
+	void print() override{
+		Figure::print();
 		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << "\n";
 		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << "\n\n";
 
@@ -50,12 +72,13 @@ public:
 //равнобедренный
 //a==c, A==C
 class Iso_Triangle :public Triangle {
-
-public:
-
+protected:
 	Iso_Triangle() {
 		name = "Равнобедренный треугольник";
 	}
+
+public:
+
 
 	Iso_Triangle(int a_, int b_, int A_, int B_) :Triangle(a_, b_, a_, A_, B_, A_)
 	{
@@ -67,10 +90,11 @@ public:
 
 //равносторонний
 class Equ_Triangle :public Iso_Triangle {
-public:
 	Equ_Triangle() {
 		name = "Равносторонний треугольник";
 	}
+public:
+
 	Equ_Triangle(int a_) :Iso_Triangle(a_, a_, 60, 60) {
 		name = "Равносторонний треугольник:";
 
@@ -81,12 +105,10 @@ public:
 //прямоугольный треугольник
 class Rect_Triangle :public Triangle {
 
-public:
-
 	Rect_Triangle() {
 		name = "Прямоугольный треугольник";
 	}
-
+public:
 
 	Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
@@ -97,7 +119,7 @@ public:
 };
 
 
-class Quadrangle {
+class Quadrangle :public Figure{
 protected:
 
 	//стороны
@@ -105,13 +127,14 @@ protected:
 	//углы
 	int A, B, C, D;
 
-	std::string name;
-public:
-	Quadrangle() { 
-		name = "Четырехугольник"; 
+	
+	Quadrangle() {
+		name = "Четырехугольник";
 	}
+public:
+
 	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
-		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), name("Четырехугольник:") {}
+		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure("Четырехугольник:") {}
 
 	int get_a() {
 		return a;
@@ -138,25 +161,25 @@ public:
 		return D;
 	}
 
-	void print() {
-		std::cout << name << "\n";
+	void print() override {
+		Figure::print();
 		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
 		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
 
 	}
 
-	std::string get_name() {
-		return name;
-	}
+	
 };
 
 
 //a==c b==d, A==C B===D
 class Parallelogram :public Quadrangle {
-public:
+protected:
 	Parallelogram() {
 		name = "Параллелограмм";
 	}
+public:
+
 
 	Parallelogram(int a_, int b_, int A_, int B_) :Quadrangle(a_, b_, a_, b_, A_, B_, A_, B_)
 	{
@@ -167,10 +190,12 @@ public:
 
 //a==c, b==d
 class Rectangle :public Parallelogram {
-public:
+protected:
 	Rectangle() {
 		name = "Прямоугольник";
 	}
+
+public:
 
 	Rectangle(int a_, int b_) :Parallelogram(a_, b_, 90, 90)
 	{
@@ -181,10 +206,11 @@ public:
 
 //a==b==c==d 90,90,90,90
 class Square :public Rectangle {
-public:
 	Square() {
 		name = "Квадрат";
 	}
+
+public:
 
 	Square(int a_) :Rectangle(a_, a_)
 	{
@@ -194,11 +220,12 @@ public:
 
 //a==b==c==d, A==C B==D
 class Rhombus : public Parallelogram {
-public:
 	Rhombus()
 	{
 		name = "Ромб";
 	}
+public:
+
 
 	Rhombus(int a_, int A_, int B_) :Parallelogram(a_, a_, A_, B_)
 	{
