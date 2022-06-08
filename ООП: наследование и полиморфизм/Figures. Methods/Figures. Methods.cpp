@@ -34,9 +34,9 @@ protected:
 	int a, b, c;
 	//углы
 	int A, B, C;
+	Triangle() :Figure(3, "Треугольник") {}
 
 public:
-	Triangle() :Figure(3, "Треугольник") {}
 	Triangle(int a_, int b_, int c_, int A_, int B_, int C_)
 		:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure(3, "Треугольник") {}
 
@@ -80,11 +80,12 @@ public:
 //равнобедренный
 //a==c, A==C
 class Iso_Triangle :public Triangle {
-public:
-
+protected:
 	Iso_Triangle() {
 		name = "Равнобедренный треугольник";
 	}
+
+public:
 
 	Iso_Triangle(int a_, int b_, int A_, int B_) :Triangle(a_, b_, a_, A_, B_, A_)
 	{
@@ -103,12 +104,10 @@ public:
 //прямоугольный треугольник
 class Rect_Triangle :public Triangle {
 
-public:
-
 	Rect_Triangle() {
 		name = "Прямоугольный треугольник";
 	}
-
+public:
 
 	Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
@@ -126,10 +125,11 @@ public:
 
 //равносторонний
 class Equ_Triangle :public Iso_Triangle {
-public:
 	Equ_Triangle() {
 		name = "Равносторонний треугольник";
 	}
+public:
+	
 	Equ_Triangle(int a_) :Iso_Triangle(a_, a_, 60, 60) {
 		name = "Равносторонний треугольник";
 
@@ -155,9 +155,9 @@ protected:
 	int a, b, c, d;
 	//углы
 	int A, B, C, D;
+	Quadrangle() :Figure(4, "Четырехугольник") {}
 
 public:
-	Quadrangle() :Figure(4, "Четырехугольник") {}
 	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
 		:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure(4, "Четырехугольник") {}
 
@@ -210,11 +210,13 @@ public:
 
 //a==c b==d, A==C B===D
 class Parallelogram :public Quadrangle {
-public:
+protected:
 	Parallelogram() {
 		name = "Параллелограмм";
 	}
 
+public:
+	
 	Parallelogram(int a_, int b_, int A_, int B_) :Quadrangle(a_, b_, a_, b_, A_, B_, A_, B_)
 	{
 		name = "Параллелограмм";
@@ -230,10 +232,12 @@ public:
 
 //a==c, b==d
 class Rectangle :public Parallelogram {
-public:
+protected:
 	Rectangle() {
 		name = "Прямоугольник";
 	}
+public:
+	
 
 	Rectangle(int a_, int b_) :Parallelogram(a_, b_, 90, 90)
 	{
@@ -251,10 +255,10 @@ public:
 
 //a==b==c==d 90,90,90,90
 class Square :public Rectangle {
-public:
 	Square() {
 		name = "Квадрат";
 	}
+public:
 
 	Square(int a_) :Rectangle(a_, a_)
 	{
@@ -271,11 +275,11 @@ public:
 
 //a==b==c==d, A==C B==D
 class Rhombus : public Parallelogram {
-public:
 	Rhombus()
 	{
 		name = "Ромб";
 	}
+public:
 
 	Rhombus(int a_, int A_, int B_) :Parallelogram(a_, a_, A_, B_)
 	{
@@ -329,4 +333,5 @@ int main() {
 
 	Rhombus r(30, 30, 40);
 	r.print_info();
+
 }
