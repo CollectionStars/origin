@@ -2,39 +2,33 @@
 #include <string>
 
 class Figure {
-protected:
-	std::string name;
-
-	Figure() {
-		name = "Фигура";
-	}
 public:
-	Figure(std::string n) {
-		name = n;
-	}
-
 	virtual void print() {
 		std::cout << name << "\n";
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << "Углы: ";
+		print_angles();
 	}
+
+	virtual void print_angles() {}
+	virtual void print_sides() {}
+
 
 	std::string get_name() {
 		return name;
 	}
+protected:
+	std::string name;
+
+	Figure(std::string n) {
+		name = n;
+	}
+
 };
 
 
-class Triangle : public Figure{
-protected:
-	//стороны
-	int a, b, c;
-	//углы
-	int A, B, C;
-
-	
-
-	Triangle() {
-		name = "Треугольник";
-	}
+class Triangle : public Figure {
 public:
 
 
@@ -60,41 +54,36 @@ public:
 		return C;
 	}
 
-	
-	void print() override{
-		Figure::print();
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << "\n\n";
 
+	void print_angles() override {
+		std::cout << "A=" << A << " B=" << B << " C=" << C << "\n\n";
 	}
+
+	void print_sides() override {
+		std::cout << "a=" << a << " b=" << b << " c=" << c << "\n";
+	}
+
+protected:
+	//стороны
+	int a, b, c;
+	//углы
+	int A, B, C;
+
 };
 
 //равнобедренный
 //a==c, A==C
 class Iso_Triangle :public Triangle {
-protected:
-	Iso_Triangle() {
-		name = "Равнобедренный треугольник";
-	}
-
 public:
-
-
 	Iso_Triangle(int a_, int b_, int A_, int B_) :Triangle(a_, b_, a_, A_, B_, A_)
 	{
 		name = "Равнобедренный треугольник:";
 	}
-
-
 };
 
 //равносторонний
 class Equ_Triangle :public Iso_Triangle {
-	Equ_Triangle() {
-		name = "Равносторонний треугольник";
-	}
 public:
-
 	Equ_Triangle(int a_) :Iso_Triangle(a_, a_, 60, 60) {
 		name = "Равносторонний треугольник:";
 
@@ -104,33 +93,16 @@ public:
 
 //прямоугольный треугольник
 class Rect_Triangle :public Triangle {
-
-	Rect_Triangle() {
-		name = "Прямоугольный треугольник";
-	}
 public:
 
 	Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90)
 	{
 		name = "Прямоугольный треугольник:";
 	}
-
-
 };
 
 
-class Quadrangle :public Figure{
-protected:
-
-	//стороны
-	int a, b, c, d;
-	//углы
-	int A, B, C, D;
-
-	
-	Quadrangle() {
-		name = "Четырехугольник";
-	}
+class Quadrangle :public Figure {
 public:
 
 	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
@@ -161,26 +133,24 @@ public:
 		return D;
 	}
 
-	void print() override {
-		Figure::print();
-		std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
-		std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
-
+	void print_sides() override {
+		std::cout << "a=" << a << " b=" << b << " c=" << c << " d=" << d << "\n";
+	}
+	void print_angles() override {
+		std::cout << "A=" << A << " B=" << B << " C=" << C << " D=" << D << "\n\n";
 	}
 
-	
+protected:
+	//стороны
+	int a, b, c, d;
+	//углы
+	int A, B, C, D;
 };
 
 
 //a==c b==d, A==C B===D
 class Parallelogram :public Quadrangle {
-protected:
-	Parallelogram() {
-		name = "Параллелограмм";
-	}
 public:
-
-
 	Parallelogram(int a_, int b_, int A_, int B_) :Quadrangle(a_, b_, a_, b_, A_, B_, A_, B_)
 	{
 		name = "Параллелограмм:";
@@ -190,13 +160,7 @@ public:
 
 //a==c, b==d
 class Rectangle :public Parallelogram {
-protected:
-	Rectangle() {
-		name = "Прямоугольник";
-	}
-
 public:
-
 	Rectangle(int a_, int b_) :Parallelogram(a_, b_, 90, 90)
 	{
 		name = "Прямоугольник:";
@@ -206,12 +170,7 @@ public:
 
 //a==b==c==d 90,90,90,90
 class Square :public Rectangle {
-	Square() {
-		name = "Квадрат";
-	}
-
 public:
-
 	Square(int a_) :Rectangle(a_, a_)
 	{
 		name = "Квадрат:";
@@ -220,13 +179,7 @@ public:
 
 //a==b==c==d, A==C B==D
 class Rhombus : public Parallelogram {
-	Rhombus()
-	{
-		name = "Ромб";
-	}
 public:
-
-
 	Rhombus(int a_, int A_, int B_) :Parallelogram(a_, a_, A_, B_)
 	{
 		name = "Ромб:";
