@@ -16,10 +16,10 @@ int Counter::get_count() {
 void Counter::test_counter() {
 	while (true) {
 		std::string ans;
-		std::cout << "Ââåäèòå êîìàíäó ('+', '-', '=' èëè 'x'): ";
+		std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ¼Ğ°Ğ½Ğ´Ñƒ ('+', '-', '=' Ğ¸Ğ»Ğ¸ 'x'): ";
 		std::cin >> ans;
-		if (ans == "x" || ans == "õ") {
-			std::cout << "Äî ñâèäàíèÿ!\n";
+		if (ans == "x" || ans == "Ñ…") {
+			std::cout << "Ğ”Ğ¾ ÑĞ²Ğ¸Ğ´Ğ°Ğ½Ğ¸Ñ!\n";
 			return;
 		}
 		else if (ans == "+") {
@@ -32,7 +32,7 @@ void Counter::test_counter() {
 			std::cout << get_count() << "\n";
 		}
 		else {
-			std::cout << "Íåïğàâèëüíûé ââîä! Ïîâòîğèòå ïîïûòêó\n";
+			std::cout << "ĞĞµĞ¿Ñ€Ğ°Ğ²Ğ¸Ğ»ÑŒĞ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´! ĞŸĞ¾Ğ²Ñ‚Ğ¾Ñ€Ğ¸Ñ‚Ğµ Ğ¿Ğ¾Ğ¿Ñ‹Ñ‚ĞºÑƒ\n";
 		}
 	}
 }
