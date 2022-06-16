@@ -3,7 +3,7 @@
 
 class Figure {
 public:
-	virtual void print() {
+	void print() {
 		std::cout << name << "\n";
 		std::cout << "Стороны: ";
 		print_sides();
