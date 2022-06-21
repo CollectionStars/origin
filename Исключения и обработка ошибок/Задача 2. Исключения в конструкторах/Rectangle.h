@@ -7,7 +7,7 @@
 //a==c, b==d
 class Rectangle :public Parallelogram {
 public:
-	Rectangle(int a_, int b_, std::string n = "Прямоугольник");
+	Rectangle(int a_, int b_, std::string n = "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє");
 };
 
 
