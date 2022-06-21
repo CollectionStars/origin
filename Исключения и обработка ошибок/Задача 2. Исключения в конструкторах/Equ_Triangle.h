@@ -4,7 +4,7 @@
 #define _EQU_TRIANGLE_H_
 
 #include"Iso_Triangle.h"
-//равносторонний
+//СЂР°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№
 class Equ_Triangle :public Iso_Triangle {
 public:
 
