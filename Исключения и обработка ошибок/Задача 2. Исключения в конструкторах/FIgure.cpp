@@ -1,7 +1,7 @@
 #include "Figure.h"
 
 Figure::Figure() {
-	name = "Ôèãóğà";
+	name = "Ğ¤Ğ¸Ğ³ÑƒÑ€Ğ°";
 }
 Figure::Figure(std::string n) {
 	name = n;
@@ -9,9 +9,9 @@ Figure::Figure(std::string n) {
 
 void Figure::print() {
 	std::cout << name << "\n";
-	std::cout << "Ñòîğîíû: ";
+	std::cout << "Ğ¡Ñ‚Ğ¾Ñ€Ğ¾Ğ½Ñ‹: ";
 	print_sides();
-	std::cout << "Óãëû: ";
+	std::cout << "Ğ£Ğ³Ğ»Ñ‹: ";
 	print_angles();
 }
 
