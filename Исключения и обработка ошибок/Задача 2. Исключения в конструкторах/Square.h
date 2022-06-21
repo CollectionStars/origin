@@ -5,7 +5,7 @@
 //a==b==c==d 90,90,90,90
 class Square :public Rectangle {
 public:
-	Square(int a_, std::string n = "Квадрат");
+	Square(int a_, std::string n = "РљРІР°РґСЂР°С‚");
 };
 
 #endif // !_SQUARE_H_
