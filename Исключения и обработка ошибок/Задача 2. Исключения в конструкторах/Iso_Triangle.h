@@ -4,11 +4,11 @@
 
 #include "Triangle.h"
 
-//равнобедренный
+//СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№
 //a==c, A==C
 class Iso_Triangle :public Triangle {
 public:
-	Iso_Triangle(int a_, int b_, int A_, int B_, std::string n = "Равнобедренный треугольник");
+	Iso_Triangle(int a_, int b_, int A_, int B_, std::string n = "Р Р°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє");
 };
 
 
