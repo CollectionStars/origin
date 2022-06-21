@@ -15,19 +15,19 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	int f_len;
-	std::cout << "Ââåäèòå çàïðåòíóþ äëèíó: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð°Ð¿Ñ€ÐµÑ‚Ð½ÑƒÑŽ Ð´Ð»Ð¸Ð½Ñƒ: ";
 	std::cin >> f_len;
 
 	while (true)
 	{
 		try {
 			std::string str;
-			std::cout << "Ââåäèòå ñëîâî: ";
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»Ð¾Ð²Ð¾: ";
 			std::cin >> str;
-			std::cout << "Äëèíà ñëîâà \"" << str << "\" ðàâíà " << function(str, f_len) << "\n";
+			std::cout << "Ð”Ð»Ð¸Ð½Ð° ÑÐ»Ð¾Ð²Ð° \"" << str << "\" Ñ€Ð°Ð²Ð½Ð° " << function(str, f_len) << "\n";
 		}
 		catch (...) {
-			std::cout << "Âû ââåëè ñëîâî çàïðåòíîé äëèíû! Äî ñâèäàíèÿ\n";
+			std::cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ ÑÐ»Ð¾Ð²Ð¾ Ð·Ð°Ð¿Ñ€ÐµÑ‚Ð½Ð¾Ð¹ Ð´Ð»Ð¸Ð½Ñ‹! Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ\n";
 			return 0;
 		}
 	}
