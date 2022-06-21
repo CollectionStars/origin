@@ -9,3 +9,4 @@
 #### 5. [[ООП: наследование и полиморфизм](https://github.com/CollectionStars/origin/tree/main/ООП:%20наследование%20и%20полиморфизм)](05)
 #### 6. [[Многофайловые проекты и библиотеки](https://github.com/CollectionStars/origin/tree/main/Многофайловые%20проекты%20и%20библиотеки)](06)
 #### 7. [[Препроцессор и макросы](https://github.com/CollectionStars/origin/tree/main/Препроцессор%20и%20макросы)](07)
+#### 8. [[Исключения и обработка ошибок](https://github.com/CollectionStars/origin/tree/main/Исключения%20и%20обработка%20ошибок)](08)
