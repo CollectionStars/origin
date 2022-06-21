@@ -4,13 +4,13 @@
 #include "Figure.h"
 class Quadrangle :public Figure {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c, d;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C, D;
 public:
 
-	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_, std::string n = "Четырехугольник");
+	Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_, std::string n = "Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє");
 
 	void print_angles() override;
 	void print_sides() override;
