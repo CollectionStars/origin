@@ -1,7 +1,7 @@
 #include "Rect_Triangle.h"
 
 
-Rect_Triangle::Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90, "Прямоугольный треугольник")
+Rect_Triangle::Rect_Triangle(int a_, int b_, int c_, int A_, int B_) :Triangle(a_, b_, c_, A_, B_, 90, "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє")
 {
-	std::cout << "Прямоугольный треугольник создан\n";
+	std::cout << "РџСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє СЃРѕР·РґР°РЅ\n";
 }
