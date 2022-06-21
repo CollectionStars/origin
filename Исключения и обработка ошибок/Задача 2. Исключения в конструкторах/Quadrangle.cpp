@@ -2,12 +2,12 @@
 
 Quadrangle::Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_, std::string n)
 	:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure(n) {
-	std::string message = n + " (стороны " + std::to_string(a_) + ", " + std::to_string(b_) + ", " + std::to_string(c_) + ", " + std::to_string(d_) + ", углы " + std::to_string(A_) + ", " + std::to_string(B_) + ", " + std::to_string(C_) + ", " + std::to_string(D_) + ") ";
+	std::string message = n + " (СЃС‚РѕСЂРѕРЅС‹ " + std::to_string(a_) + ", " + std::to_string(b_) + ", " + std::to_string(c_) + ", " + std::to_string(d_) + ", СѓРіР»С‹ " + std::to_string(A_) + ", " + std::to_string(B_) + ", " + std::to_string(C_) + ", " + std::to_string(D_) + ") ";
 
 	if (A + B + C + D != 360) {
-		throw Error(message + "не создан. Причина: сумма углов не равна 360");
+		throw Error(message + "РЅРµ СЃРѕР·РґР°РЅ. РџСЂРёС‡РёРЅР°: СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360");
 	}
-	std::cout << message << "создан\n";
+	std::cout << message << "СЃРѕР·РґР°РЅ\n";
 }
 
 void Quadrangle::print_sides() {
