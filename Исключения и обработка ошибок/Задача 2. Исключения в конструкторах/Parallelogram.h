@@ -8,7 +8,6 @@
 class Parallelogram :public Quadrangle {
 
 public:
-	Parallelogram(int a_, int b_, int A_, int B_, std::string n = "Параллелограмм");
+	Parallelogram(int a_, int b_, int A_, int B_, std::string n = "РџР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј");
 };
 #endif // !_PARALLELOGRAMM_H_
-#pragma once
