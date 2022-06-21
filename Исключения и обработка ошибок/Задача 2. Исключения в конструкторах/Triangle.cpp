@@ -3,12 +3,12 @@
 Triangle::Triangle(int a_, int b_, int c_, int A_, int B_, int C_, std::string n)
 	:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure(n) {
 
-	std::string message = n + " (стороны " + std::to_string(a_) + ", " + std::to_string(b_) + ", " + std::to_string(c_) + ", углы " + std::to_string(A_) + ", " + std::to_string(B_) + ", " + std::to_string(C_) + ") ";
+	std::string message = n + " (СЃС‚РѕСЂРѕРЅС‹ " + std::to_string(a_) + ", " + std::to_string(b_) + ", " + std::to_string(c_) + ", СѓРіР»С‹ " + std::to_string(A_) + ", " + std::to_string(B_) + ", " + std::to_string(C_) + ") ";
 
 	if (A + B + C != 180) {
-		throw Error(message + "не создан. Причина: сумма углов не равна 180");
+		throw Error(message + "РЅРµ СЃРѕР·РґР°РЅ. РџСЂРёС‡РёРЅР°: СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180");
 	}
-	std::cout << message << "создан\n";
+	std::cout << message << "СЃРѕР·РґР°РЅ\n";
 }
 
 void Triangle::print_angles() {
