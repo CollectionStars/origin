@@ -7,14 +7,14 @@
 
 class Triangle : public Figure {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C;
 
 public:
 
-	Triangle(int a_, int b_, int c_, int A_, int B_, int C_, std::string n = "Треугольник");
+	Triangle(int a_, int b_, int c_, int A_, int B_, int C_, std::string n = "РўСЂРµСѓРіРѕР»СЊРЅРёРє");
 
 	void print_angles();
 	void print_sides();
