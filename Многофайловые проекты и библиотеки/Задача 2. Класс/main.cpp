@@ -3,6 +3,7 @@
 #include <string>
 #include "Counter.h"
 
+using namespace CounterClass;
 void main()
 {
 	setlocale(LC_ALL, "ru");
