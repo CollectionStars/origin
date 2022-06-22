@@ -1,29 +1,21 @@
 #pragma once
-
-#ifndef _COUNTER_H_
-#define _COUNTER_H_
-
-
 #include <iostream>
 #include <string>
+namespace CounterClass {
+	class Counter
+	{
+		int count;
 
-class Counter
-{
-	int count;
+	public:
 
-public:
+		Counter(int num = 0);
 
-	Counter() :count(1) {}
+		void add();
 
-	Counter(int num) :count(num) {}
+		void sub();
 
-	void add();
+		int get_count();
 
-	void sub();
-
-	int get_count();
-
-	void test_counter();
-};
-
-#endif // !_COUNTER_H_#pragma once
+		void test_counter();
+	};
+}
