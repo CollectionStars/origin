@@ -1,11 +1,10 @@
-
 #include "Quadrangle.h"
 
 Quadrangle::Quadrangle(int a_, int b_, int c_, int d_, int A_, int B_, int C_, int D_)
-	:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure("Четырехугольник") {
+	:a(a_), b(b_), c(c_), d(d_), A(A_), B(B_), C(C_), D(D_), Figure("Р§РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє") {
 
 	if (A + B + C + D != 360) {
-		throw Error( "сумма углов не равна 360");
+		throw Error( "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 360");
 	}
 	
 }
