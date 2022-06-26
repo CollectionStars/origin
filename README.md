@@ -11,3 +11,4 @@
 #### 7. [[Препроцессор и макросы](https://github.com/CollectionStars/origin/tree/main/Препроцессор%20и%20макросы)](07)
 #### 8. [[Исключения и обработка ошибок](https://github.com/CollectionStars/origin/tree/main/Исключения%20и%20обработка%20ошибок)](08)
 #### 9. [[Перегрузка операторов](https://github.com/CollectionStars/origin/tree/main/Перегрузка%20операторов)](09)
+#### 10. [[CMake](https://github.com/CollectionStars/origin/tree/main/CMake)](10)
