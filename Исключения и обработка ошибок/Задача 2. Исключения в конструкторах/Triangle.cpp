@@ -1,11 +1,11 @@
 #include "Triangle.h"
 
 Triangle::Triangle(int a_, int b_, int c_, int A_, int B_, int C_)
-	:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure("Треугольник") {
+	:a(a_), b(b_), c(c_), A(A_), B(B_), C(C_), Figure("РўСЂРµСѓРіРѕР»СЊРЅРёРє") {
 
 
 	if (A + B + C != 180) {
-		throw Error( "сумма углов не равна 180");
+		throw Error( "СЃСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІРЅР° 180");
 	}
 }
 
@@ -35,4 +35,3 @@ int  Triangle::get_B() {
 int Triangle::get_C() {
 	return C;
 }
-
