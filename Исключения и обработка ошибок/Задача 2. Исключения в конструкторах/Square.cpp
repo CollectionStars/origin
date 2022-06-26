@@ -2,6 +2,6 @@
 
 Square::Square(int a_) :Rectangle(a_, a_)
 {
-	name = "Квадрат";
+	name = "РљРІР°РґСЂР°С‚";
 
 }
