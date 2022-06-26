@@ -2,7 +2,7 @@
 
 #include "Triangle.h"
 
-//равнобедренный
+//СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№
 //a==c, A==C
 class Iso_Triangle :public Triangle {
 public:
