@@ -4,13 +4,12 @@
 
 class Triangle : public Figure {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C;
 
 public:
-
 
 	Triangle(int a_, int b_, int c_, int A_, int B_, int C_);
 
@@ -22,5 +21,4 @@ public:
 	int get_A();
 	int get_B();
 	int get_C();
-	
 };
