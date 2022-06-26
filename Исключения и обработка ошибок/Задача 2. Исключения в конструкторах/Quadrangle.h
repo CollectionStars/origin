@@ -3,9 +3,9 @@
 #include "Figure.h"
 class Quadrangle :public Figure {
 protected:
-	//стороны
+	//СЃС‚РѕСЂРѕРЅС‹
 	int a, b, c, d;
-	//углы
+	//СѓРіР»С‹
 	int A, B, C, D;
 public:
 
@@ -22,4 +22,3 @@ public:
 	int get_C();
 	int get_D();
 };
-
