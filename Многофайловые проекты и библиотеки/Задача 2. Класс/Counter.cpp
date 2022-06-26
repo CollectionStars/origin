@@ -1,19 +1,20 @@
 #include "Counter.h"
 
+CounterClass::Counter::Counter(int num ) :count(num) {}
 
-void Counter::add() {
+void CounterClass::Counter::add() {
 	++count;
 }
 
-void Counter::sub() {
+void CounterClass::Counter::sub() {
 	--count;
 }
 
-int Counter::get_count() {
+int CounterClass::Counter::get_count() {
 	return count;
 }
 
-void Counter::test_counter() {
+void CounterClass::Counter::test_counter() {
 	while (true) {
 		std::string ans;
 		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
