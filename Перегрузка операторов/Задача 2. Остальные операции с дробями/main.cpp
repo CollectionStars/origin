@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <numeric>
 
 class Fraction
 {
@@ -8,23 +9,23 @@ private:
 	int denominator_;
 
 public:
+
+	friend std::ostream& operator<<(std::ostream& out, const Fraction& rhs) {
+		out << rhs.numerator_ << "/" << rhs.denominator_;
+		return out;
+	}
+
 	Fraction(int numerator, int denominator)
 	{
+		if (denominator == 0) {
+			throw std::invalid_argument("Сan't divide by zero");
+		}
 		numerator_ = numerator;
 		denominator_ = denominator;
 	}
 
-	Fraction(const Fraction& oth) :numerator_(oth.numerator_), denominator_(oth.denominator_) {}
-
-	std::string to_string() {
-		return std::string(std::to_string(numerator_) + "/" + std::to_string(denominator_));
-	}
-
 	bool operator ==(const Fraction& rhs)const {
-		if (numerator_ == rhs.numerator_ && denominator_ == rhs.denominator_) {
-			return true;
-		}
-		return false;
+		return numerator_ == rhs.numerator_ && denominator_ == rhs.denominator_;
 	}
 
 	bool operator !=(const Fraction& rhs)const {
@@ -32,11 +33,17 @@ public:
 	}
 
 	bool operator < (const Fraction& rhs)const {
-		return  static_cast<double>(numerator_) / denominator_ < static_cast<double>(rhs.numerator_) / rhs.denominator_;
+		if (denominator_ != rhs.denominator_) {
+			return numerator_ * rhs.denominator_ < rhs.numerator_* denominator_;
+		}
+		return numerator_ < rhs.numerator_;
 	}
 
 	bool operator > (const Fraction& rhs)const {
-		return  static_cast<double>(numerator_) / denominator_ > static_cast<double>(rhs.numerator_) / rhs.denominator_;
+		if (denominator_ != rhs.denominator_) {
+			return numerator_ * rhs.denominator_ > rhs.numerator_ * denominator_;
+		}
+		return numerator_ > rhs.numerator_;
 	}
 
 	bool operator <= (const Fraction& rhs)const {
@@ -47,20 +54,14 @@ public:
 		return !(*this < rhs);
 	}
 
+
 	void reduction() {
-		int temp = numerator_;
-		if (numerator_ > denominator_) {
-			temp = denominator_;
-		}
-		//по модулю, чтобы сокращать еще и отрицательные дроби
-		for (int i = abs(temp); i > 0; i--)
-		{
-			if (numerator_ % i == 0 && denominator_ % i == 0) {
-				numerator_ /= i;
-				denominator_ /= i;
-			}
-		}
+
+		int NOD = std::gcd(numerator_, denominator_);
+		numerator_ /= NOD;
+		denominator_ /= NOD;
 	}
+
 
 	Fraction operator +(const Fraction& rhs)const {
 		Fraction temp(*this);
@@ -80,14 +81,7 @@ public:
 	Fraction operator -(const Fraction& rhs)const {
 		Fraction temp(*this);
 
-		if (temp.denominator_ == rhs.denominator_) {
-			temp.numerator_ -= rhs.numerator_;
-		}
-		else {
-			temp.denominator_ *= rhs.denominator_;
-			temp.numerator_ *= rhs.denominator_;
-			temp.numerator_ -= rhs.numerator_ * denominator_;
-		}
+		temp = temp + (-rhs);
 		temp.reduction();
 		return temp;
 	}
@@ -100,6 +94,7 @@ public:
 		temp.reduction();
 		return temp;
 	}
+
 
 	Fraction operator /(const Fraction& rhs)const {
 		Fraction temp(*this);
@@ -118,9 +113,11 @@ public:
 		return temp;
 	}
 
+
 	//префиксный
 	Fraction& operator ++() {
 		numerator_ += denominator_;
+		reduction();
 		return *this;
 	}
 
@@ -128,12 +125,15 @@ public:
 	Fraction operator ++(int) {
 		Fraction temp(*this);
 		++(*this);
+		reduction();
+		temp.reduction();
 		return temp;
 	}
 
 	//префиксный
 	Fraction& operator --() {
 		numerator_ -= denominator_;
+		reduction();
 		return *this;
 	}
 
@@ -141,6 +141,8 @@ public:
 	Fraction operator --(int) {
 		Fraction temp(*this);
 		--(*this);
+		reduction();
+		temp.reduction();
 		return temp;
 	}
 };
@@ -153,6 +155,7 @@ int main()
 	std::cin >> a;
 	std::cout << "Введите знаменатель дроби 1: ";
 	std::cin >> b;
+
 	Fraction f1(a, b);
 
 	std::cout << "Введите числитель дроби 2: ";
@@ -162,14 +165,14 @@ int main()
 
 	Fraction f2(a, b);
 
-	std::cout << f1.to_string() << " + " << f2.to_string() << " = " << (f1 + f2).to_string() << "\n";
-	std::cout << f1.to_string() << " - " << f2.to_string() << " = " << (f1 - f2).to_string() << "\n";
-	std::cout << f1.to_string() << " * " << f2.to_string() << " = " << (f1 * f2).to_string() << "\n";
-	std::cout << f1.to_string() << " / " << f2.to_string() << " = " << (f1 / f2).to_string() << "\n";
-	std::cout << "++" << f1.to_string() << " * " << f2.to_string() << " = ";
-	std::cout << (++f1 * f2).to_string() << "\n";
-	std::cout << "Значение дроби 1 = " << f1.to_string() << "\n";
-	std::cout << f1.to_string() << "-- * " << f2.to_string() << " = ";
-	std::cout << (f1-- * f2).to_string() << "\n";
-	std::cout << "Значение дроби 1 = " << f1.to_string() << "\n";
+	std::cout << f1 << " + " << f2 << " = " << (f1 + f2) << "\n";
+	std::cout << f1 << " - " << f2 << " = " << (f1 - f2) << "\n";
+	std::cout << f1 << " * " << f2 << " = " << (f1 * f2) << "\n";
+	std::cout << f1 << " / " << f2 << " = " << (f1 / f2) << "\n";
+	std::cout << "++" << f1 << " * " << f2 << " = ";
+	std::cout << (++f1 * f2) << "\n";
+	std::cout << "Значение дроби 1 = " << f1 << "\n";
+	std::cout << f1 << "-- * " << f2 << " = ";
+	std::cout << (f1-- * f2) << "\n";
+	std::cout << "Значение дроби 1 = " << f1 << "\n";
 }
