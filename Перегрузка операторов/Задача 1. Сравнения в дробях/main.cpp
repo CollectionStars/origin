@@ -14,10 +14,7 @@ public:
 	}
 
 	bool operator ==(const Fraction& rhs)const {
-		if (numerator_ == rhs.numerator_ && denominator_ == rhs.denominator_) {
-			return true;
-		}
-		return false;
+		return numerator_ == rhs.numerator_ && denominator_ == rhs.denominator_;
 	}
 
 	bool operator !=(const Fraction& rhs)const {
@@ -25,11 +22,17 @@ public:
 	}
 
 	bool operator < (const Fraction& rhs)const {
-		return  static_cast<double>(numerator_) / denominator_ < static_cast<double>(rhs.numerator_) / rhs.denominator_;
+		if (denominator_ != rhs.denominator_) {
+			return numerator_ * rhs.denominator_ < rhs.numerator_* denominator_;
+		}
+		return numerator_ < rhs.numerator_;
 	}
 
 	bool operator > (const Fraction& rhs)const {
-		return  static_cast<double>(numerator_) / denominator_ > static_cast<double>(rhs.numerator_) / rhs.denominator_;
+		if (denominator_ != rhs.denominator_) {
+			return numerator_ * rhs.denominator_ > rhs.numerator_ * denominator_;
+		}
+		return numerator_ > rhs.numerator_;
 	}
 
 	bool operator <= (const Fraction& rhs)const {
