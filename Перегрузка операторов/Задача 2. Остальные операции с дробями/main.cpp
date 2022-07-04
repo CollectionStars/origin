@@ -40,10 +40,7 @@ public:
 	}
 
 	bool operator > (const Fraction& rhs)const {
-		if (denominator_ != rhs.denominator_) {
-			return numerator_ * rhs.denominator_ > rhs.numerator_ * denominator_;
-		}
-		return numerator_ > rhs.numerator_;
+		return (!(*this < rhs) && !(*this == rhs));
 	}
 
 	bool operator <= (const Fraction& rhs)const {
@@ -56,7 +53,6 @@ public:
 
 
 	void reduction() {
-
 		int NOD = std::gcd(numerator_, denominator_);
 		numerator_ /= NOD;
 		denominator_ /= NOD;
@@ -80,7 +76,6 @@ public:
 
 	Fraction operator -(const Fraction& rhs)const {
 		Fraction temp(*this);
-
 		temp = temp + (-rhs);
 		temp.reduction();
 		return temp;
@@ -98,9 +93,8 @@ public:
 
 	Fraction operator /(const Fraction& rhs)const {
 		Fraction temp(*this);
-
-		temp.numerator_ *= rhs.denominator_;
-		temp.denominator_ *= rhs.numerator_;
+		Fraction temp2(rhs.denominator_, rhs.numerator_);
+		temp = temp * temp2;
 		temp.reduction();
 		return temp;
 	}
@@ -116,12 +110,13 @@ public:
 
 	//префиксный
 	Fraction& operator ++() {
-		numerator_ += denominator_;
+		Fraction temp(1, 1);
+		*this = *this + temp;
 		reduction();
 		return *this;
 	}
 
-	//постфикснфый
+	//постфиксный
 	Fraction operator ++(int) {
 		Fraction temp(*this);
 		++(*this);
@@ -132,12 +127,13 @@ public:
 
 	//префиксный
 	Fraction& operator --() {
-		numerator_ -= denominator_;
+		Fraction temp(1, 1);
+		*this = *this - temp;
 		reduction();
 		return *this;
 	}
 
-	//постфикснфый
+	//постфиксный
 	Fraction operator --(int) {
 		Fraction temp(*this);
 		--(*this);
