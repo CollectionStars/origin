@@ -29,10 +29,7 @@ public:
 	}
 
 	bool operator > (const Fraction& rhs)const {
-		if (denominator_ != rhs.denominator_) {
-			return numerator_ * rhs.denominator_ > rhs.numerator_ * denominator_;
-		}
-		return numerator_ > rhs.numerator_;
+		return (!(*this < rhs) && !(*this == rhs));
 	}
 
 	bool operator <= (const Fraction& rhs)const {
