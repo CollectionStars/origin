@@ -13,3 +13,4 @@
 #### 9. [[Перегрузка операторов](https://github.com/CollectionStars/origin/tree/main/Перегрузка%20операторов)](09)
 #### 10. [[CMake](https://github.com/CollectionStars/origin/tree/main/CMake)](10)
 #### 11. [[Сборка и подключение библиотек](https://github.com/CollectionStars/origin/tree/main/Сборка%20и%20подключение%20библиотек)](11)
+#### 12. [[Курсовой проект: «Симулятор гонок»](https://github.com/CollectionStars/origin/tree/main/Симулятор%20гонок)](12)
