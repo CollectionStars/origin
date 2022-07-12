@@ -15,13 +15,14 @@ public:
 		return out;
 	}
 
-	Fraction(int numerator, int denominator)
+	Fraction(int numerator, int denominator = 1)
 	{
 		if (denominator == 0) {
 			throw std::invalid_argument("Сan't divide by zero");
 		}
 		numerator_ = numerator;
 		denominator_ = denominator;
+		reduction();
 	}
 
 	bool operator ==(const Fraction& rhs)const {
@@ -75,15 +76,11 @@ public:
 	}
 
 	Fraction operator -(const Fraction& rhs)const {
-		Fraction temp(*this);
-		temp = temp + (-rhs);
-		temp.reduction();
-		return temp;
+		return (*this) + (-rhs);
 	}
 
 	Fraction operator *(const Fraction& rhs)const {
 		Fraction temp(*this);
-
 		temp.numerator_ *= rhs.numerator_;
 		temp.denominator_ *= rhs.denominator_;
 		temp.reduction();
@@ -92,19 +89,11 @@ public:
 
 
 	Fraction operator /(const Fraction& rhs)const {
-		Fraction temp(*this);
-		Fraction temp2(rhs.denominator_, rhs.numerator_);
-		temp = temp * temp2;
-		temp.reduction();
-		return temp;
+		return (*this) * Fraction(rhs.denominator_, rhs.numerator_);
 	}
 
 	Fraction operator -()const {
-		Fraction temp(*this);
-
-		temp.numerator_ *= (-1);
-		temp.reduction();
-		return temp;
+		return (*this) * Fraction(-1);
 	}
 
 
@@ -112,7 +101,6 @@ public:
 	Fraction& operator ++() {
 		Fraction temp(1, 1);
 		*this = *this + temp;
-		reduction();
 		return *this;
 	}
 
@@ -120,7 +108,6 @@ public:
 	Fraction operator ++(int) {
 		Fraction temp(*this);
 		++(*this);
-		reduction();
 		temp.reduction();
 		return temp;
 	}
@@ -129,7 +116,6 @@ public:
 	Fraction& operator --() {
 		Fraction temp(1, 1);
 		*this = *this - temp;
-		reduction();
 		return *this;
 	}
 
@@ -137,7 +123,6 @@ public:
 	Fraction operator --(int) {
 		Fraction temp(*this);
 		--(*this);
-		reduction();
 		temp.reduction();
 		return temp;
 	}
