@@ -12,3 +12,4 @@
 #### 8. [[Исключения и обработка ошибок](https://github.com/CollectionStars/origin/tree/main/Исключения%20и%20обработка%20ошибок)](08)
 #### 9. [[Перегрузка операторов](https://github.com/CollectionStars/origin/tree/main/Перегрузка%20операторов)](09)
 #### 10. [[CMake](https://github.com/CollectionStars/origin/tree/main/CMake)](10)
+#### 11. [[Сборка и подключение библиотек](https://github.com/CollectionStars/origin/tree/main/Сборка%20и%20подключение%20библиотек)](11)
