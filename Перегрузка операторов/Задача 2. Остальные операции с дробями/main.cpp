@@ -108,7 +108,6 @@ public:
 	Fraction operator ++(int) {
 		Fraction temp(*this);
 		++(*this);
-		temp.reduction();
 		return temp;
 	}
 
@@ -123,7 +122,6 @@ public:
 	Fraction operator --(int) {
 		Fraction temp(*this);
 		--(*this);
-		temp.reduction();
 		return temp;
 	}
 };
